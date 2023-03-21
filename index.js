@@ -10,7 +10,8 @@ inquirer.prompt([
         name: 'name',
         validate: function (input) {
             if (input.length >= 4) {
-                console.log('Input must be less than 4 characters')
+                console.log('Input must be less than 4 characters');
+                return false;
             } else {
                 return true;
             }
@@ -33,21 +34,16 @@ inquirer.prompt([
     },
 ])
     .then((data) => {
-        let shape;
-        switch (data) {
-            case 'Triangle': shape = new Triangle(data.colorText, data.colorShape, data.name).render(); break;
-            case 'Square': shape = new Square(data.colorText, data.colorShape, data.name).render(); break;
-            case 'Circle': shape = new Circle(data.colorText, data.colorShape, data.name).render(); break;
+        let myShape;
+        switch(data) {
+            case 'Triangle': myShape = new Triangle(data.shape, colorShape, data.colorText, data.name).render(); break;
+            case 'Square': myShape = new Square(data.shape, colorShape, data.colorText, data.name).render(); break;
+            case 'Circle': myShape = new Circle(data.shape, colorShape, data.colorText, data.name).render(); break;
             default: return 'Not a valid shape!'; break;
         }})
     .then((shape)=> {
-        fs.writeFile(`./examples/${shape.name}.svg`, shape, err => {
+        fs.writeFile(`./examples/logo.svg`, shape, err => {
            err ? console.log('File was not written') : console.log('File was written');
         })
     })
     .catch(err => console.log(err));
-
-//Things to do:
-//A logo.svg file needs to be created
-//Output text to the terminal: 'Generated logo.svg"
-//300x200px image with the selected criteria
