@@ -7,6 +7,9 @@ A CLI logo creator that takes in three letters, 2 colours and a shape and makes 
 ## Screenshots:
 Coming Soon
 
+## Video Link:
+https://drive.google.com/file/d/1rdYnzQfeX6bTLsRPjjp9WU3rQWGKxa3N/view
+
 ## Difficulties
 Some of the difficulties that I faced with this challenge was the switch statement, mainly just forgetting certain things and going through it with a fine toothcomb like a return and forgetting to call the render().
 
