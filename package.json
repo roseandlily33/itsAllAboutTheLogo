@@ -1,0 +1,25 @@
+{
+  "name": "itsallaboutthelogo",
+  "version": "1.0.0",
+  "description": "SVG logo creater",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roseandlily33/itsAllAboutTheLogo.git"
+  },
+  "author": "Victoria Benoit",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/roseandlily33/itsAllAboutTheLogo/issues"
+  },
+  "homepage": "https://github.com/roseandlily33/itsAllAboutTheLogo#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}
