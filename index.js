@@ -42,12 +42,11 @@ inquirer.prompt([
             return myShape = new Square(data.shape, data.colorShape, data.colorText, data.name).render(); break;
             case 'Circle':
             return myShape = new Circle(data.shape, data.colorShape, data.colorText, data.name).render(); break;
-
             default: 'Not a valid shape!'; break;
         }
     })
     .then((shape) => {
-        fs.writeFile(`./examples/logo.svg`, shape, err => {
+        fs.writeFile(`./examples/${shape.name}.svg`, shape, err => {
             err ? console.log('File was not written') : console.log('File was written');
         })
     })
