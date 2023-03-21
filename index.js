@@ -9,7 +9,7 @@ inquirer.prompt([
         message: 'Name for your logo: (max 3 characters)',
         name: 'name',
         validate: function (input) {
-            if (input >= 4) {
+            if (input.length >= 4) {
                 console.log('Input must be less than 4 characters')
             } else {
                 return true;
@@ -42,7 +42,7 @@ inquirer.prompt([
         }})
     .then((shape)=> {
         fs.writeFile(`./examples/${shape.name}.svg`, shape, err => {
-           err ? console.log('File was not written') : console.log('File was written')
+           err ? console.log('File was not written') : console.log('File was written');
         })
     })
     .catch(err => console.log(err));
