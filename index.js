@@ -34,19 +34,18 @@ inquirer.prompt([
     }
 ])
     .then((data) => {
-        let myShape;
         switch (data.shape) {
             case 'Triangle':
-            return myShape = new Triangle(data.shape, data.colorShape, data.colorText, data.name).render(); break;
+            return myShape = new Triangle(data.shape, data.colorShape, data.colorText, data.name); break;
             case 'Square':
-            return myShape = new Square(data.shape, data.colorShape, data.colorText, data.name).render(); break;
+            return myShape = new Square(data.shape, data.colorShape, data.colorText, data.name); break;
             case 'Circle':
-            return myShape = new Circle(data.shape, data.colorShape, data.colorText, data.name).render(); break;
+            return myShape = new Circle(data.shape, data.colorShape, data.colorText, data.name); break;
             default: 'Not a valid shape!'; break;
         }
     })
     .then((shape) => {
-        fs.writeFile(`./examples/${shape.name}.svg`, shape, err => {
+        fs.writeFile(`./examples/${shape.name}.svg`, shape.render(), err => {
             err ? console.log('File was not written') : console.log('File was written');
         })
     })
