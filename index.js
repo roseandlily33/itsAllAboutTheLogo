@@ -35,13 +35,13 @@ inquirer.prompt([
 ])
     .then((data) => {
         let myShape;
-        switch (data) {
+        switch (data.shape) {
             case 'Triangle':
-                myShape = new Triangle(data.shape, data.colorShape, data.colorText, data.name).render(); break;
+            return myShape = new Triangle(data.shape, data.colorShape, data.colorText, data.name).render(); break;
             case 'Square':
-                myShape = new Square(data.shape, data.colorShape, data.colorText, data.name).render(); break;
+            return myShape = new Square(data.shape, data.colorShape, data.colorText, data.name).render(); break;
             case 'Circle':
-                myShape = new Circle(data.shape, data.colorShape, data.colorText, data.name).render(); break;
+            return myShape = new Circle(data.shape, data.colorShape, data.colorText, data.name).render(); break;
 
             default: 'Not a valid shape!'; break;
         }
