@@ -35,9 +35,9 @@ inquirer.prompt([
     .then((data) => {
         let shape;
         switch (data) {
-            case 'Triangle': shape = new Triangle(data.colorText, data.colorShape, data.name); break;
-            case 'Square': shape = new Square(data.colorText, data.colorShape, data.name); break;
-            case 'Circle': shape = new Circle(data.colorText, data.colorShape, data.name); break;
+            case 'Triangle': shape = new Triangle(data.colorText, data.colorShape, data.name).render(); break;
+            case 'Square': shape = new Square(data.colorText, data.colorShape, data.name).render(); break;
+            case 'Circle': shape = new Circle(data.colorText, data.colorShape, data.name).render(); break;
             default: return 'Not a valid shape!'; break;
         }})
     .then((shape)=> {
